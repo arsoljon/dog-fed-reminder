@@ -10,21 +10,23 @@ import Reminder from './pages/Reminder'
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route exact path="/reminder">
-          <Reminder />
-        </Route>
-        <Route exact path="/history">
-          <History />
-        </Route>
-        <Route exact path="*">
-          <Error />
-        </Route>
-      </Switch>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/reminder">
+            <Reminder />
+          </Route>
+          <Route exact path="/history">
+            <History />
+          </Route>
+          <Route exact path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   )
 }
